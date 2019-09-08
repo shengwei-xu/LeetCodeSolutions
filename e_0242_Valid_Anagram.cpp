@@ -1,5 +1,6 @@
 /**
- * easy - 0242 - Valid Anagram
+ * 0242 - Valid Anagram
+ * Easy 
  * TAG: sort | hash table
  * 
  * Given two strings s and t , write a function to determine if t is an anagram of s.
