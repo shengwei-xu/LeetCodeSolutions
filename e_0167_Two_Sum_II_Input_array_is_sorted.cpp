@@ -23,7 +23,7 @@ using namespace std;
 
 class Solution {
 public:
-    // O(nlogn) dichotomy
+    // O(nlogn) binary search
     vector<int> twoSum(vector<int>& numbers, int target) {
         vector<int> ans;
         for (int i = 0; i < numbers.size(); ++i) {
