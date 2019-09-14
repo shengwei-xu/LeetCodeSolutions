@@ -34,6 +34,9 @@ public:
         // HERE using `nums.size() - 2` as condition maybe cause RunTimeError
         for (int k = 0; k < nums.size() - 2; ++k) { 
             if (k > 0 && nums[k] == nums[k - 1]) continue;
+            if(nums[k]+nums[k+1]+nums[k+2]>0) break;    //no solution
+			if(nums[k]+nums[nums.size() - 2]+nums[nums.size() - 1]<0) continue; //"k" is too small
+
             for (int i = k + 1, j = nums.size() - 1; i < j;) {
                 if (nums[k] + nums[i] + nums[j] == 0) {
                     ans.emplace_back(vector<int> {nums[k], nums[i], nums[j]});
