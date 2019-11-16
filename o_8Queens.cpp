@@ -3,7 +3,6 @@
 #include <cmath>
 using namespace std;
 
-
 const int N = 8; // number of queens
 int table[N][N] = {0}; // chess table
 int queen[N]; // queens' row position
