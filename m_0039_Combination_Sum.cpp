@@ -74,7 +74,7 @@ int main() {
     vector<int> candidates = {2,3,6,7};
     int target = 7;
 
-    vector<vector<int>> ans = s.combinationSum_2(candidates, target);
+    vector<vector<int>> ans = s.combinationSum(candidates, target);
 
     for (int i = 0; i < ans.size(); ++i) {
         for (int j = 0; j < ans[i].size(); ++j) {
