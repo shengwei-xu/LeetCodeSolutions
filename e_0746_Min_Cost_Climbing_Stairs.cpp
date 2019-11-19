@@ -44,6 +44,18 @@ public:
     }
 
     int minCostClimbingStairs_2(vector<int>& cost) {
+        vector<int> dp (cost.size() + 1);
+        dp[0] = 0; // cost reaching at index 0
+        dp[1] = 0; // cost reaching at index 1
+        // dp[2] = min(cost[0], cost[1]);
+        for (int i = 2; i < dp.size(); ++i) {
+            // Finally, we reach the last index that is behind of the last index of ```cost```
+            dp[i] = min(dp[i - 1] + cost[i - 1], dp[i - 2] + cost[i - 2]);
+        }
+        return dp[dp.size() - 1];
+    }
+
+    int minCostClimbingStairs_3(vector<int>& cost) {
         int f1 = 0, f2 = 0;
         for (int i = cost.size() - 1; i >= 0; --i) {
             int f0 = cost[i] + min(f1, f2);
@@ -61,6 +73,7 @@ int main() {
     vector<int> cost {1, 100, 1, 1, 1, 100, 1, 1, 100, 1};
     cout << s->minCostClimbingStairs(cost) << endl;
     cout << s->minCostClimbingStairs_2(cost) << endl;
+    cout << s->minCostClimbingStairs_3(cost) << endl;
 
     return 0;
 }
