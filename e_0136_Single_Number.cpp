@@ -40,14 +40,21 @@ public:
         test_case({1, 2, 1}, 2, judge);
         test_case({2, 2, 4, 4, 1}, 1, judge);
         test_case({2, 2, 2, 2, 3}, 3, judge);
-        return judge ? "Passed all test." : "Wrong Answer.";
+        return judge ? "Passed all tests." : "Wrong Answer.";
     }
 
     bool test_case(vector<int> nums, int expected, bool& judge) {
         int v = singleNumber(nums);
         if (v != expected) {
             judge = false;
+            // Print wrong case info.
+            cout << "{";
+            for (auto item : nums) {
+                cout << item << ',';
+            }
+            cout << "}\t";
             cout << "Output: " << v << ", Expected: " << expected << endl;
+            // Ending of print
         }
         return judge;
     }
