@@ -6,3 +6,4 @@
 ID|Title|Language|Difficulty
 -|-|-|-
 1|xxx|Java|easy
+2|xxx|C++|hard
